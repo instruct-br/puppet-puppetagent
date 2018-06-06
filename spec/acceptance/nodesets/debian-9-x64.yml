@@ -4,7 +4,7 @@ HOSTS:
       - agent
       - default
     platform: debian-9-amd64
-    box: gutocarvalho/debian9x64puppet5
+    box: debian/stretch64
     hypervisor: vagrant
     vagrant_memsize: 2600
 
