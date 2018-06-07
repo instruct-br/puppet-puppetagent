@@ -1,0 +1,12 @@
+HOSTS:
+  sles-12-x64:
+    roles:
+      - agent
+      - default
+    platform: sles-12-x86_64
+    box: wvera/sles12sp2
+    hypervisor: vagrant
+    vagrant_memsize: 2600
+
+CONFIG:
+  type: aio
