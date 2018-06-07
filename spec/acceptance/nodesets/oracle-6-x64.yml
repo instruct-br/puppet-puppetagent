@@ -1,0 +1,12 @@
+HOSTS:
+  oracle-6-x64:
+    roles:
+      - agent
+      - default
+    platform: el-6-x86_64
+    box: elastic/oraclelinux-6-x86_64
+    hypervisor: vagrant
+    vagrant_memsize: 2600
+
+CONFIG:
+  type: aio
