@@ -1,5 +1,5 @@
 {
-  "name": "instructbr-puppetagent",
+  "name": "instruct-puppetagent",
   "version": "2.0.0",
   "author": "Guto Carvalho",
   "summary": "A simple Puppet module for puppet agent",
@@ -85,7 +85,7 @@
     "puppet-agent",
     "puppet-aio",
     "puppetagent",
-    "hiera5"
+    "hiera"
   ],
   "pdk-version": "1.5.0",
   "template-url": "https://github.com/puppetlabs/pdk-templates",
