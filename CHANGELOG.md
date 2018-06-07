@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## Relesase 2.0.0
+
+- Added support to SLES 11
+- Added support to SLES 12
+- Added support to Oracle Linux 5
+- Added support to Oracle Linux 6
+- Added support to Oracle Linux 7
+- Added support to Scientific Linux 6
+- Added support to Scientific Linux 7
+- Added support to Puppet agent 5.5.1 on all OSes
+- Added support to Ruby 2.4.4 on all CI tests
+
 ## Release 1.4.0
 
 **Features**
