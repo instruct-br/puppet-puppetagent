@@ -1,56 +1,93 @@
 {
-     "name": "instructbr-puppetagent",
-     "version": "2.0.0",
-     "author": "Guto Carvalho",
-     "license": "Apache-2.0",
-     "summary": "A simple Puppet module for puppet agent",
-     "source": "https://github.com/instruct-br/puppet-puppetagent",
-     "project_page": "https://github.com/instruct-br/puppet-puppetagent",
-     "issues_url": "https://github.com/instruct-br/puppet-puppetagent/issues",
-     "tags": ["puppet5", "puppet", "puppet-agent", "puppet-aio", "puppetagent", "hiera5"],
-     "requirements": [
+  "name": "instruct-puppetagent",
+  "version": "2.0.0",
+  "author": "Guto Carvalho",
+  "summary": "A simple Puppet module for puppet agent",
+  "license": "Apache-2.0",
+  "source": "https://github.com/instruct-br/puppet-puppetagent",
+  "project_page": "https://github.com/instruct-br/puppet-puppetagent",
+  "issues_url": "https://github.com/instruct-br/puppet-puppetagent/issues",
+  "dependencies": [
+
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "architecture": "x86_64",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Scientific",
+      "architecture": "x86_64",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Oracle",
+      "architecture": "x86_64",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "architecture": "x86_64",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "architecture": "x86_64",
+      "operatingsystemrelease": [
+        "14.04",
+        "16.04"
+      ]
+    },
+    {
+      "operatingsystem": "Suse",
+      "architecture": "x86_64",
+      "operatingsystemrelease": [
+        "11",
+        "12"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "architecture": "x86_64",
+      "operatingsystemrelease": [
+        "7",
+        "8",
+        "9"
+      ]
+    }
+  ],
+  "requirements": [
     {
       "name": "puppet",
       "version_requirement": ">=5.0.0 < 6.0.0"
     }
-   ],
-     "operatingsystem_support": [
-       {
-       "operatingsystem":"RedHat",
-       "architecture": "x86_64",
-       "operatingsystemrelease":[ "5", "6", "7" ]
-       },
-       {
-       "operatingsystem":"Scientific",
-       "architecture": "x86_64",
-       "operatingsystemrelease":[ "5", "6", "7" ]
-       },
-       {
-       "operatingsystem":"Oracle",
-       "architecture": "x86_64",
-       "operatingsystemrelease":[ "5", "6", "7" ]
-       },
-       {
-       "operatingsystem":"CentOS",
-       "architecture": "x86_64",
-       "operatingsystemrelease":[ "5", "6", "7" ]
-       },
-       {
-       "operatingsystem": "Ubuntu",
-       "architecture": "x86_64",
-       "operatingsystemrelease": [ "14.04", "16.04" ]
-       },
-       {
-        "operatingsystem": "Suse",
-        "architecture": "x86_64",
-        "operatingsystemrelease": [ "11", "12" ]
-        },
-       {
-       "operatingsystem": "Debian",
-       "architecture": "x86_64",
-       "operatingsystemrelease": [ "7", "8", "9" ]
-       }
-      ],
-     "dependencies": [
-     ]
-   }
+  ],
+  "tags": [
+    "puppet5",
+    "puppet",
+    "puppet-agent",
+    "puppet-aio",
+    "puppetagent",
+    "hiera"
+  ],
+  "pdk-version": "1.5.0",
+  "template-url": "https://github.com/puppetlabs/pdk-templates",
+  "template-ref": "1.5.0-0-gd1b3eca"
+}

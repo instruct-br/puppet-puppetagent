@@ -24,4 +24,4 @@ branches:
   - master
 notifications:
   email:
-   - gutocarvalho@instruct.com.br
+   - sysops@instruct.com.br
