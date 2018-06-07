@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/gutocarvalho/puppet-puppetagent.svg?branch=master)](https://travis-ci.org/gutocarvalho/puppet-puppetagent) ![License](https://img.shields.io/badge/license-Apache%202-blue.svg) ![Version](https://img.shields.io/puppetforge/v/gutocarvalho/puppetagent.svg) ![Downloads](https://img.shields.io/puppetforge/dt/gutocarvalho/puppetagent.svg)
+[![Build Status](https://travis-ci.org/instruct-br/puppet-puppetagent.svg?branch=master)](https://travis-ci.org/instruct-br/puppet-puppetagent) ![License](https://img.shields.io/badge/license-Apache%202-blue.svg) ![Version](https://img.shields.io/puppetforge/v/instruct/puppetagent.svg) ![Downloads](https://img.shields.io/puppetforge/dt/instruct/puppetagent.svg)
 
 # Puppetagent
 
@@ -14,7 +14,7 @@
 
 ## Overview
 
-This module will manage puppet-agent 5.3 in your system.
+This module will manage puppet-agent 5 in your system.
 
 **If you are looking into puppet 4 please use an older version of this module.**
 
@@ -33,8 +33,10 @@ This module was tested under these platforms
 - RedHat 5, 6 and 7
 - CentOS 5, 6 and 7
 - Scientific 6 and 7
+- Oracle 5, 6 and 7
 - Debian 7, 8 and 9
 - Ubuntu 14.04 and 16.04
+- SLES 11 and 12
 
 Tested only in X86_64 arch.  
 
@@ -61,15 +63,15 @@ You should configure your /etc/hosts properly.
 via git
 
     # cd /etc/puppetlabs/code/environment/production/modules
-    # git clone https://github.com/gutocarvalho/puppet-agent.git puppetagent
+    # git clone https://github.com/instruct-br/puppet-agent.git puppetagent
 
 via puppet
 
-    # puppet module install gutocarvalho/puppetagent
+    # puppet module install instruct/puppetagent
 
 via puppetfile
 
-    mod 'gutocarvalho-puppetagent'
+    mod 'instruct-puppetagent'
 
 ## Usage
 
@@ -251,19 +253,28 @@ hierarchy:
 
 ```
 
-This is an example of files under modules/puppetserver/data
+This is an example of files under modules/puppetagent/data
 
 ```
 oses/family/RedHat.yaml
 oses/family/Debian.yaml
+oses/family/Suse.yaml
 oses/distro/CentOS/5.yaml
 oses/distro/CentOS/7.yaml
 oses/distro/CentOS/8.yaml
+oses/distro/Scientific/5.yaml
+oses/distro/Scientific/7.yaml
+oses/distro/Scientific/8.yaml
+oses/distro/OracleLinux/5.yaml
+oses/distro/OracleLinux/7.yaml
+oses/distro/OracleLinux/8.yaml
 oses/distro/Ubuntu/14.04.yaml
 oses/distro/Ubuntu/16.04.yaml
 oses/distro/Debian/7.yaml
 oses/distro/Debian/8.yaml
 oses/distro/Debian/9.yaml
+oses/distro/SLES/11.yaml
+oses/distro/SLES/12.yaml
 ```
 
 ## Development
@@ -273,13 +284,12 @@ oses/distro/Debian/9.yaml
 This module was developed using
 
 - Puppet 5.5.1
-  - Hiera 3.4.2 (v5 format)
-  - Facter 2.5.1
-- CentOS 7
-- VirtualBox 5.1.28
-- Vagrant 2.0
-  - box: gutocarvalho/centos7x64puppet5
-
+  - Hiera 3.4.3 (v5 format)
+  - Facter 3.11.1
+- CentOS 7.4
+- VirtualBox 5.2.12
+- Vagrant 2.1.1
+  
 ### Testing
 
 This module uses puppet-lint, puppet-syntax, metadata-json-lint, rspec-puppet, beaker and travis-ci. We hope you use them before submitting your PR.
@@ -301,7 +311,7 @@ This module uses puppet-lint, puppet-syntax, metadata-json-lint, rspec-puppet, b
 
 #### Running acceptance tests
 
-Acceptance tests (Beaker) can be executed using ./acceptance.sh. There is a matrix 1/11 to test this class under Centos 5/6/7, Debian 7/8/9, Ubuntu 14.04/16.04, Scientific Linux 6/7 and Oracle Linux 5.
+Acceptance tests (Beaker) can be executed using ./acceptance.sh. There is a matrix 1/15 to test this class under Centos 5/6/7, Debian 7/8/9, Ubuntu 14.04/16.04, Scientific Linux 6/7, Oracle Linux 5/6/7 and SLES 11/12.
 
 If you want a detailed output, set this before run acceptance.sh
 
@@ -316,17 +326,25 @@ Our matrix values
     centos-5-x64
     centos-6-x64
     centos-7-x64
+    oracle-5-x64
+    oracle-6-x64
+    oracle-7-x64
+    scientific-7-x64
+    scientific-6-x64
     debian-7-x64
     debian-8-x64
     debian-9-x64
     ubuntu-1404-x64
     ubuntu-1604-x64
-    scientific-7-x64
-    scientific-6-x64
-    oracle-5-x64
-
+    sles-11-x64
+    sles-12-x64
+   
 This matrix needs vagrant (>=2.0) and virtualbox (>=5.1) to work properly, make sure that you have both of them installed.
 
-### Author/Contributors
+### Author
 
-Guto Carvalho (gutocarvalho at gmail dot com)
+Guto Carvalho (gutocarvalho at instruct dot com dot br)
+
+### Contributors
+
+Taciano Tres (taciano at instruct dot com dot br)
