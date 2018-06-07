@@ -84,7 +84,7 @@ via puppetfile
 ```
 class { 'puppetagent':
   agent_certname    => $trusted['certname'],
-  agent_version     => '5.3.3-1.el7',
+  agent_version     => '5.5.1-1.el7',
   agent_server      => 'pupperserver.hacklab',
   agent_environment => 'production',
   agent_runinterval => 3600
@@ -96,7 +96,7 @@ class { 'puppetagent':
 ```
 class { 'puppetagent':
   agent_certname    => $trusted['certname'],
-  agent_version     => '5.3.3-1.el6',
+  agent_version     => '5.5.1-1.el6',
   agent_server      => 'pupperserver.hacklab',
   agent_environment => 'production',
   agent_runinterval => 3600
@@ -108,7 +108,7 @@ class { 'puppetagent':
 ```
 class { 'puppetagent':
   agent_certname    => $trusted['certname'],
-  agent_version     => '5.3.3-1.el5',
+  agent_version     => '5.5.1-1.el5',
   agent_server      => 'pupperserver.hacklab',
   agent_environment => 'production',
   agent_runinterval => 3600
@@ -120,7 +120,7 @@ class { 'puppetagent':
 ```
 class { 'puppetagent':
   agent_certname    => $trusted['certname'],
-  agent_version     => '5.3.3-1trusty',
+  agent_version     => '5.5.1-1trusty',
   agent_server      => 'pupperserver.hacklab',
   agent_environment => 'production',
   agent_runinterval => 3600
@@ -132,7 +132,7 @@ class { 'puppetagent':
 ```
 class { 'puppetagent':
   agent_certname    => $trusted['certname'],
-  agent_version     => '5.3.3-1xenial',
+  agent_version     => '5.5.1-1xenial',
   agent_server      => 'pupperserver.hacklab',
   agent_environment => 'production',
   agent_runinterval => 3600
@@ -144,7 +144,7 @@ class { 'puppetagent':
 ```
 class { 'puppetagent':
   agent_certname    => $trusted['certname'],
-  agent_version     => '5.3.3-1wheezy',
+  agent_version     => '5.5.1-1wheezy',
   agent_server      => 'pupperserver.hacklab',
   agent_environment => 'production',
   agent_runinterval => 3600
@@ -156,7 +156,7 @@ class { 'puppetagent':
 ```
 class { 'puppetagent':
   agent_certname    => $trusted['certname'],
-  agent_version     => '5.3.3-1jessie',
+  agent_version     => '5.5.1-1jessie',
   agent_server      => 'pupperserver.hacklab',
   agent_environment => 'production',
   agent_runinterval => 3600
@@ -168,7 +168,7 @@ class { 'puppetagent':
 ```
 class { 'puppetagent':
   agent_certname    => $trusted['certname'],
-  agent_version     => '5.3.3-1stretch',
+  agent_version     => '5.5.1-1stretch',
   agent_server      => 'pupperserver.hacklab',
   agent_environment => 'production',
   agent_runinterval => 3600
@@ -198,7 +198,7 @@ Certificate name for the agent
 
 Type: String
 
-The puppet agent package version (5.3.0-1xenial|installed|latest)
+The puppet agent package version (5.5.1-1xenial|installed|latest)
 
 #### `agent_server`
 
@@ -222,7 +222,7 @@ Set how often puppet agent applies the catalog in seconds.
 
 ```
 puppetagent::agent_certname: "%{trusted.certname}"
-puppetagent::agent_version: '5.3.3-1.el7'
+puppetagent::agent_version: '5.5.1-1.el7'
 puppetagent::agent_server: 'puppetserver.hacklab'
 puppetagent::agent_environment: 'production'
 puppetagent::agent_runinterval: 3600
@@ -272,7 +272,7 @@ oses/distro/Debian/9.yaml
 
 This module was developed using
 
-- Puppet 5.3.3
+- Puppet 5.5.1
   - Hiera 3.4.2 (v5 format)
   - Facter 2.5.1
 - CentOS 7
@@ -301,7 +301,7 @@ This module uses puppet-lint, puppet-syntax, metadata-json-lint, rspec-puppet, b
 
 #### Running acceptance tests
 
-Acceptance tests (Beaker) can be executed using ./acceptance.sh. There is a matrix 1/8 to test this class under Centos 5/6/7, Debian 7/8/9 and Ubuntu 14.04/16.04.
+Acceptance tests (Beaker) can be executed using ./acceptance.sh. There is a matrix 1/11 to test this class under Centos 5/6/7, Debian 7/8/9, Ubuntu 14.04/16.04, Scientific Linux 6/7 and Oracle Linux 5.
 
 If you want a detailed output, set this before run acceptance.sh
 
@@ -321,6 +321,9 @@ Our matrix values
     debian-9-x64
     ubuntu-1404-x64
     ubuntu-1604-x64
+    scientific-7-x64
+    scientific-6-x64
+    oracle-5-x64
 
 This matrix needs vagrant (>=2.0) and virtualbox (>=5.1) to work properly, make sure that you have both of them installed.
 
