@@ -63,7 +63,7 @@ You should configure your /etc/hosts properly.
 via git
 
     # cd /etc/puppetlabs/code/environment/production/modules
-    # git clone https://github.com/instruct-br/puppet-agent.git puppetagent
+    # git clone https://github.com/instruct-br/puppet-puppetagent.git puppetagent
 
 via puppet
 
