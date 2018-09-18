@@ -8,12 +8,14 @@
   "project_page": "https://github.com/instruct-br/puppet-puppetagent",
   "issues_url": "https://github.com/instruct-br/puppet-puppetagent/issues",
   "dependencies": [
-
+    {
+      "name": "puppetlabs/inifile",
+      "version_requirement": ">= 2.2.0"
+    }
   ],
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
-      "architecture": "x86_64",
       "operatingsystemrelease": [
         "5",
         "6",
@@ -22,7 +24,6 @@
     },
     {
       "operatingsystem": "Scientific",
-      "architecture": "x86_64",
       "operatingsystemrelease": [
         "5",
         "6",
@@ -31,7 +32,6 @@
     },
     {
       "operatingsystem": "Oracle",
-      "architecture": "x86_64",
       "operatingsystemrelease": [
         "5",
         "6",
@@ -40,7 +40,6 @@
     },
     {
       "operatingsystem": "CentOS",
-      "architecture": "x86_64",
       "operatingsystemrelease": [
         "5",
         "6",
@@ -49,7 +48,6 @@
     },
     {
       "operatingsystem": "Ubuntu",
-      "architecture": "x86_64",
       "operatingsystemrelease": [
         "14.04",
         "16.04"
@@ -57,7 +55,6 @@
     },
     {
       "operatingsystem": "Suse",
-      "architecture": "x86_64",
       "operatingsystemrelease": [
         "11",
         "12"
@@ -65,11 +62,18 @@
     },
     {
       "operatingsystem": "Debian",
-      "architecture": "x86_64",
       "operatingsystemrelease": [
         "7",
         "8",
         "9"
+      ]
+    },
+    {
+      "operatingsystem": "Windows",
+      "operatingsystemrelease": [
+        "Server 2008 R2",
+        "Server 2012 R2",
+        "Server 2016"
       ]
     }
   ],

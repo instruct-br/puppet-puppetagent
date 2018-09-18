@@ -1,0 +1,5 @@
+fixtures:
+  symlinks:
+    puppetagent: '#{source_dir}'
+  forge_modules:
+    inifile: 'puppetlabs/inifile'

@@ -2,7 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## Next Relesase
+
+**Features**
+
+- Added support to Windows Server 2016
+- Added support to Windows Server 2012 R2
+- Added support to Windows Server 2008 R2
+
 ## Relesase 2.0.0
+
+**Features**
 
 - Added support to SLES 11
 - Added support to SLES 12

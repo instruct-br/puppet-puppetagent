@@ -37,8 +37,9 @@ This module was tested under these platforms
 - Debian 7, 8 and 9
 - Ubuntu 14.04 and 16.04
 - SLES 11 and 12
+- Windows Server 2008 R2, 2012 R2 and 2016
 
-Tested only in X86_64 arch.  
+Tested only in x86_64 arch.
 
 ## Requirements
 
@@ -338,7 +339,7 @@ Our matrix values
     ubuntu-1604-x64
     sles-11-x64
     sles-12-x64
-   
+
 This matrix needs vagrant (>=2.0) and virtualbox (>=5.1) to work properly, make sure that you have both of them installed.
 
 ### Author
