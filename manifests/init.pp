@@ -1,4 +1,4 @@
-# Puppetsagent calss.
+# Puppetagent class.
 #
 # This is a class to install and manage PuppetAgent:
 #
@@ -10,14 +10,16 @@
 # @param [String] agent_environment Set the environment for puppet-agent
 # @param [Integer] agent_runinterval Set the interval between agent runs
 # @param [String] agent_server Set the puppet server for the agent
-
-class puppetagent(
+# @param [Boolean] manage_package Enable the agent package management. Default: true
+#
+class puppetagent (
   String $agent_certname,
   String $agent_version,
   String $agent_environment,
   Integer $agent_runinterval,
   String $agent_server,
-  ) {
+  Boolean $manage_package = true,
+) {
 
   include puppetagent::install
   include puppetagent::config
