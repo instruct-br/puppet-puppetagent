@@ -1,8 +1,10 @@
 # docs
 class puppetagent::install {
 
-  package { 'puppet-agent':
-    ensure => $puppetagent::agent_version,
+  if 'Linux' == $facts['kernel'] {
+    package { 'puppet-agent':
+      ensure => $puppetagent::agent_version,
+    }
   }
 
 }
