@@ -16,6 +16,10 @@ class puppetagent::config {
       changes => [ "set main/server ${puppetagent::agent_server}", ],
     }
 
+    augeas { 'agent_caserver':
+      changes => [ "set main/ca_server ${puppetagent::ca_server}", ],
+    }
+
     augeas { 'agent_environment':
       changes => [ "set main/environment ${puppetagent::agent_environment}", ],
     }
@@ -54,6 +58,11 @@ class puppetagent::config {
     ini_setting { 'agent_server':
       setting => 'server',
       value   => $puppetagent::agent_server,
+    }
+
+    ini_setting { 'agent_caserver':
+      setting => 'ca_server',
+      value   => $puppetagent::ca_server,
     }
 
     ini_setting { 'agent_environment':
