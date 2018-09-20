@@ -147,7 +147,7 @@ Set how often puppet agent applies the catalog in seconds.
 
 #### `manage_package`
 
-Type: String
+Type: Boolean
 
 Set if the module should manage the package installation or not.
 
@@ -220,7 +220,7 @@ This module was developed using
   - Hiera 3.4.3 (v5 format)
   - Facter 3.11.1
 - CentOS 7.4
-- VirtualBox 5.2.12
+- VirtualBox 5.2.18
 - Vagrant 2.1.1
   
 ### Testing
