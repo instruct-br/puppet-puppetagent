@@ -37,7 +37,7 @@ This module was tested under these platforms
 - Debian 7, 8 and 9
 - Ubuntu 14.04 and 16.04
 - SLES 11 and 12
-- Windows Server 2008 R2, 2012 R2 and 2016
+- Windows Server 2008 R2, 2012 R2 and 2016 (puppet.conf management only)
 
 Tested only in x86_64 arch.
 
@@ -87,94 +87,12 @@ via puppetfile
 ```
 class { 'puppetagent':
   agent_certname    => $trusted['certname'],
-  agent_version     => '5.5.1-1.el7',
+  agent_version     => '5.5.6-1.el7',
   agent_server      => 'pupperserver.hacklab',
+  ca_server         => 'pupperserver.hacklab',
   agent_environment => 'production',
   agent_runinterval => 3600
-}
-```
-
-#### Example in EL 6
-
-```
-class { 'puppetagent':
-  agent_certname    => $trusted['certname'],
-  agent_version     => '5.5.1-1.el6',
-  agent_server      => 'pupperserver.hacklab',
-  agent_environment => 'production',
-  agent_runinterval => 3600
-}
-```
-
-#### Example in EL 5
-
-```
-class { 'puppetagent':
-  agent_certname    => $trusted['certname'],
-  agent_version     => '5.5.1-1.el5',
-  agent_server      => 'pupperserver.hacklab',
-  agent_environment => 'production',
-  agent_runinterval => 3600
-}
-```
-
-#### Example in Ubuntu 14.04
-
-```
-class { 'puppetagent':
-  agent_certname    => $trusted['certname'],
-  agent_version     => '5.5.1-1trusty',
-  agent_server      => 'pupperserver.hacklab',
-  agent_environment => 'production',
-  agent_runinterval => 3600
-}
-```
-
-#### Example in Ubuntu 16.04
-
-```
-class { 'puppetagent':
-  agent_certname    => $trusted['certname'],
-  agent_version     => '5.5.1-1xenial',
-  agent_server      => 'pupperserver.hacklab',
-  agent_environment => 'production',
-  agent_runinterval => 3600
-}
-```
-
-#### Example in Debian 7
-
-```
-class { 'puppetagent':
-  agent_certname    => $trusted['certname'],
-  agent_version     => '5.5.1-1wheezy',
-  agent_server      => 'pupperserver.hacklab',
-  agent_environment => 'production',
-  agent_runinterval => 3600
-}
-```
-
-#### Example in Debian 8
-
-```
-class { 'puppetagent':
-  agent_certname    => $trusted['certname'],
-  agent_version     => '5.5.1-1jessie',
-  agent_server      => 'pupperserver.hacklab',
-  agent_environment => 'production',
-  agent_runinterval => 3600
-}
-```
-
-#### Example in Debian 9
-
-```
-class { 'puppetagent':
-  agent_certname    => $trusted['certname'],
-  agent_version     => '5.5.1-1stretch',
-  agent_server      => 'pupperserver.hacklab',
-  agent_environment => 'production',
-  agent_runinterval => 3600
+  manage_package    => 'true',
 }
 ```
 
@@ -209,6 +127,12 @@ Type: String
 
 The puppet master server to which the puppet agent should connect.
 
+#### `ca_server`
+
+Type: String
+
+The puppet master ca server to which the puppet agent should connect.
+
 #### `agent_environment`
 
 Type: String
@@ -221,14 +145,22 @@ Type: Integer
 
 Set how often puppet agent applies the catalog in seconds.
 
+#### `manage_package`
+
+Type: String
+
+Set if the module should manage the package installation or not.
+
 ### Hiera Keys Sample
 
 ```
 puppetagent::agent_certname: "%{trusted.certname}"
-puppetagent::agent_version: '5.5.1-1.el7'
+puppetagent::agent_version: 'installed'
 puppetagent::agent_server: 'puppetserver.hacklab'
+puppetagent::ca_server: 'puppetserver.hacklab'
 puppetagent::agent_environment: 'production'
 puppetagent::agent_runinterval: 3600
+puppetagent::manage_package: true
 ```
 
 ### Hiera module config
@@ -284,7 +216,7 @@ oses/distro/SLES/12.yaml
 
 This module was developed using
 
-- Puppet 5.5.1
+- Puppet 5.5.6
   - Hiera 3.4.3 (v5 format)
   - Facter 3.11.1
 - CentOS 7.4
