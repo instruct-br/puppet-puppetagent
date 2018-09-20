@@ -36,6 +36,9 @@ describe 'puppetagent', :type => :class do
           it { is_expected.to contain_augeas('agent_environment').with({
             'context' => '/files/etc/puppetlabs/puppet/puppet.conf',
           })}
+          it { is_expected.to contain_augeas('agent_caserver').with({
+            'context' => '/files/etc/puppetlabs/puppet/puppet.conf',
+          })}
         when 'windows'
           it { is_expected.to contain_ini_setting('agent_certname').with({
             'path' => 'c:/ProgramData/PuppetLabs/puppet/etc/puppet.conf',
@@ -47,6 +50,9 @@ describe 'puppetagent', :type => :class do
             'path' => 'c:/ProgramData/PuppetLabs/puppet/etc/puppet.conf',
           })}
           it { is_expected.to contain_ini_setting('agent_environment').with({
+            'path' => 'c:/ProgramData/PuppetLabs/puppet/etc/puppet.conf',
+          })}
+          it { is_expected.to contain_ini_setting('agent_caserver').with({
             'path' => 'c:/ProgramData/PuppetLabs/puppet/etc/puppet.conf',
           })}
         end
