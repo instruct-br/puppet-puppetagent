@@ -9,7 +9,7 @@ class puppetagent::config {
     }
 
     augeas { 'agent_certname':
-      changes => [ "set main/certname ${puppetagent::agent_certname}", ],
+      changes => [ "set agent/certname ${puppetagent::agent_certname}", ],
     }
 
     augeas { 'agent_server':
@@ -21,11 +21,11 @@ class puppetagent::config {
     }
 
     augeas { 'agent_environment':
-      changes => [ "set main/environment ${puppetagent::agent_environment}", ],
+      changes => [ "set agent/environment ${puppetagent::agent_environment}", ],
     }
 
     augeas { 'agent_runinterval':
-      changes => [ "set main/runinterval ${puppetagent::agent_runinterval}", ],
+      changes => [ "set agent/runinterval ${puppetagent::agent_runinterval}", ],
     }
   }
 
@@ -46,7 +46,7 @@ class puppetagent::config {
 
     Ini_setting {
       path    => $puppet_conf,
-      section => 'main',
+      section => 'agent',
       notify  => Service['puppet']
     }
 
@@ -57,11 +57,13 @@ class puppetagent::config {
 
     ini_setting { 'agent_server':
       setting => 'server',
+      section => 'main',
       value   => $puppetagent::agent_server,
     }
 
     ini_setting { 'agent_caserver':
       setting => 'ca_server',
+      section => 'main',
       value   => $puppetagent::ca_server,
     }
 
